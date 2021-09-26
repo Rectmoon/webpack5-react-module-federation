@@ -1,13 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "build": "lerna run --scope @webpack5-hera/* build",
-    "start": "lerna run --scope @webpack5-hera/* --parallel start",
-    "serve": "lerna run --scope @webpack5-hera/* --parallel serve",
-    "clean": "lerna run --scope @webpack5-hera/* --parallel clean"
+    "build": "lerna run --scope @webpack5-react-module-federation/* build",
+    "start": "lerna run --scope @webpack5-react-module-federation/* --parallel start",
+    "serve": "lerna run --scope @webpack5-react-module-federation/* --parallel serve",
+    "clean": "lerna run --scope @webpack5-react-module-federation/* --parallel clean"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
   },
-  "name": "webpack5-hera"
+  "name": "webpack5-react-module-federation"
 }

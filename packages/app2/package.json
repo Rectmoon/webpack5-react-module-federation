@@ -1,5 +1,5 @@
 {
-  "name": "@webpack5-hera/app2",
+  "name": "@webpack5-react-module-federation/app2",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {
