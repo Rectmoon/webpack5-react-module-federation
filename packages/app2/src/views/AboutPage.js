@@ -9,7 +9,7 @@ const style = {
 
 const AboutPage = () => (
   <div style={style}>
-    <h1>About Page</h1>
+    <h1>About Page222</h1>
     <p>
       <em>a page being provided by App 2</em>
     </p>
