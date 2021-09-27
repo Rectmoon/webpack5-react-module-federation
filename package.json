@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development lerna run --scope @webpack5-react-module-federation/* --parallel dev",
-    "build": "cross-env NODE_ENV=production lerna run --scope @webpack5-react-module-federation/* build",
+    "build": "cross-env NODE_ENV=production lerna run --scope @webpack5-react-module-federation/* --parallel build",
     "serve": "lerna run --scope @webpack5-react-module-federation/* --parallel serve",
     "clean": "lerna run --scope @webpack5-react-module-federation/* --parallel clean"
   },
