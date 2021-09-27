@@ -1,13 +1,30 @@
 {
+  "name": "webpack5-react-module-federation",
   "private": true,
   "scripts": {
-    "build": "lerna run --scope @webpack5-react-module-federation/* build",
-    "start": "lerna run --scope @webpack5-react-module-federation/* --parallel start",
+    "dev": "cross-env NODE_ENV=development lerna run --scope @webpack5-react-module-federation/* --parallel dev",
+    "build": "cross-env NODE_ENV=production lerna run --scope @webpack5-react-module-federation/* build",
     "serve": "lerna run --scope @webpack5-react-module-federation/* --parallel serve",
     "clean": "lerna run --scope @webpack5-react-module-federation/* --parallel clean"
   },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "babel-loader": "8.2.2",
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "5.3.2",
+    "lerna": "^3.22.1",
+    "react-refresh": "^0.10.0",
+    "webpack": "5.52.1",
+    "webpack-cli": "4.8.0",
+    "webpack-dev-server": "4.2.1"
   },
-  "name": "webpack5-react-module-federation"
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2"
+  }
 }

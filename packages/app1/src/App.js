@@ -7,11 +7,6 @@ import remoteRoutes from "app2/routes";
 
 const routes = [...localRoutes, ...remoteRoutes];
 
-console.log({
-  routes,
-  NODE_ENV: process.env.NODE_ENV,
-});
-
 const App = () => (
   <Router>
     <div>
