@@ -49,6 +49,6 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
           "./routes": "./src/routes",
         },
         shared
-      }),
+      })
     ]
   })
