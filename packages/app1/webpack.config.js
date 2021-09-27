@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 
 const developmentWebpackConfig = require('../../webpack/webpack.development')
 const productionWebpackConfig = require('../../webpack/webpack.production')
-const { dependencies } = require('../../package.json')
+const shared = require('../../webpack/sharedDependencies')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -27,19 +27,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
         "./Navigation": "./src/components/Navigation",
         "./routes": "./src/routes",
       },
-      shared: {
-        ...dependencies,
-        react: {
-          eager: true,
-          singleton: true,
-          requiredVersion: dependencies.react,
-        },
-        "react-dom": {
-          eager: true,
-          singleton: true,
-          requiredVersion: dependencies["react-dom"],
-        },
-      },
+      shared
     }),
   ]
 })
@@ -60,19 +48,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
           "./Navigation": "./src/components/Navigation",
           "./routes": "./src/routes",
         },
-        shared: {
-          ...dependencies,
-          react: {
-            eager: true,
-            singleton: true,
-            requiredVersion: dependencies.react,
-          },
-          "react-dom": {
-            eager: true,
-            singleton: true,
-            requiredVersion: dependencies["react-dom"],
-          },
-        },
+        shared
       }),
     ]
   })
