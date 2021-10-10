@@ -9,7 +9,8 @@ const prodConfig = {
 
   output: {
     path: path.resolve(process.cwd(), 'dist'),
-    filename: "[name].[contenthash:8].js",
+    filename: "[name].[contenthash:8].bundle.js",
+    chunkFilename: "[name].[contenthash:8].chunk.js",
   },
 
   plugins: [

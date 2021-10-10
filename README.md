@@ -1,6 +1,6 @@
 ```bash
 # install dependencies
-lerna bootstrap
+lerna bootstrap [--hoist]
 
 # development
 npm run dev #lerna run dev --scope @webpack5-react-module-federation/app1 for app1

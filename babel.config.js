@@ -6,6 +6,8 @@ module.exports = (api) => {
   return {
     presets: ["@babel/preset-env", "@babel/preset-react"],
 
-    plugins: [isDev && "react-refresh/babel"].filter(Boolean),
+    plugins: [
+      '@babel/transform-runtime',
+      isDev && "react-refresh/babel"].filter(Boolean),
   };
 };
