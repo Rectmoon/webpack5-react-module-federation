@@ -1,0 +1,15 @@
+{
+  "name": "@webpack5-react-module-federation/lib-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack --mode production",
+    "serve": "node app",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

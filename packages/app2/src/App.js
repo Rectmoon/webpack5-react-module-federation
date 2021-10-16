@@ -1,5 +1,7 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "lib-app/react";
+import { BrowserRouter as Router, Route, Switch } from "lib-app/react-router-dom";
+import { NameContextProvider } from "lib-app/contexts";
+import Welcome from "./components/Welcome";
 
 import localRoutes from "./routes";
 import Navigation from "app1/Navigation";
@@ -12,6 +14,9 @@ const App = () => (
     <div>
       <h1>App 2</h1>
       <Navigation />
+      <NameContextProvider.Provider value="Rectmoon">
+        <Welcome />
+      </NameContextProvider.Provider>
       <React.Suspense fallback={<div>Loading...</div>}>
         <Switch>
           {routes.map((route) => (

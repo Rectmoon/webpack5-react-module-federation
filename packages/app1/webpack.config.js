@@ -21,6 +21,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
       name: "app1",
       filename: "remoteEntry.js",
       remotes: {
+        "lib-app": "lib_app@http://localhost:3000/remoteEntry.js",
         app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       exposes: {
@@ -42,6 +43,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
         name: "app1",
         filename: "remoteEntry.js",
         remotes: {
+          "lib-app": "lib_app@http://localhost:3000/lib-app/remoteEntry.js",
           app2: "app2@http://localhost:3002/app2/remoteEntry.js",
         },
         exposes: {

@@ -14,6 +14,11 @@ app.use(
   express.static(path.join(__dirname, '../app2/dist'),)
 )
 
+app.use(
+  `/lib-app`,
+  express.static(path.join(__dirname, '../lib-app/dist'))
+)
+
 app.get(`*`, (req, res) => {
   res.sendFile(__dirname + `/dist/index.html`, {
     maxAge: 0
