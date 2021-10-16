@@ -29,7 +29,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
   :
   merge({ ...productionWebpackConfig }, {
     output: {
-      publicPath: 'http://localhost:3002/'
+      publicPath: '/app2/'
     },
 
     plugins: [
@@ -37,7 +37,7 @@ module.exports = isDev ? merge(developmentWebpackConfig, {
         name: "app2",
         filename: "remoteEntry.js",
         remotes: {
-          app1: "app1@http://localhost:3001/remoteEntry.js",
+          app1: "app1@http://localhost:3001/app1/remoteEntry.js",
         },
         exposes: {
           "./routes": "./src/routes",
