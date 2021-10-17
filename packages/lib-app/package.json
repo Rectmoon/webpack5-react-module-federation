@@ -8,8 +8,5 @@
     "build": "webpack --mode production",
     "serve": "node app",
     "clean": "rm -rf dist"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

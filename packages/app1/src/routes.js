@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'lib-app/react'
 
-const HomePage = React.lazy(() => import("./views/HomePage"));
+const HomePage = React.lazy(() => import('./views/HomePage'))
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: HomePage,
-    exact: true,
-  },
-];
+    exact: true
+  }
+]
 
-export default routes;
+export default routes
