@@ -1,5 +1,5 @@
 {
-  "name": "@webpack5-react-module-federation/app2",
+  "name": "@webpack5-react-module-federation/app3",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,8 +7,5 @@
     "build": "webpack",
     "serve": "node app",
     "clean": "rm -rf dist"
-  },
-  "devDependencies": {
-    "external-remotes-plugin": "^1.0.0"
   }
 }

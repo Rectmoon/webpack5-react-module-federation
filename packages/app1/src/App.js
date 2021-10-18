@@ -1,17 +1,13 @@
-import React from 'lib-app/react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'lib-app/react-router-dom'
-import { NameContextProvider } from 'lib-app/contexts'
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import { NameContextProvider } from 'contexts'
 
 import Navigation from './components/Navigation'
 import localRoutes from './routes'
 import remoteRoutes from 'app2/routes'
 
 const routes = [...localRoutes, ...remoteRoutes]
-const Welcome = React.lazy(() => import('app2/Welcome'))
+// const Welcome = React.lazy(() => import('app2/Welcome'))
 
 const App = () => {
   const [name, setName] = React.useState('Billy666')
@@ -19,14 +15,15 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h1>App 1</h1>
+        <h1>Hello Rectmoon</h1>
+
         <Navigation />
 
-        <NameContextProvider.Provider value={{ name, setName }}>
+        {/* <NameContextProvider.Provider value={{ name, setName }}>
           <React.Suspense fallback='Loading Name'>
             <Welcome />
           </React.Suspense>
-        </NameContextProvider.Provider>
+        </NameContextProvider.Provider> */}
 
         <React.Suspense fallback={<div>Loading...</div>}>
           <Switch>

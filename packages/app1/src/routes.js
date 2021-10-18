@@ -1,4 +1,4 @@
-import React from 'lib-app/react'
+import React from 'react'
 
 const HomePage = React.lazy(() => import('./views/HomePage'))
 

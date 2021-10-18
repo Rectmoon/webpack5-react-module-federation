@@ -1,5 +1,6 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const shared = require('../../webpack/sharedDependencies')
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -37,8 +38,8 @@ module.exports = {
       exposes: {
         './react': 'react',
         './react-dom': 'react-dom',
-        './react-router-dom': 'react-router-dom',
-        './contexts': './src/contexts/index.js'
+        './react-router-dom': 'react-router-dom'
+        // './contexts': './src/contexts/index.js'
       }
     })
   ]

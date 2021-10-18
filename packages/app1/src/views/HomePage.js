@@ -1,4 +1,4 @@
-import React from 'lib-app/react'
+import React from 'react'
 
 const style = {
   height: 400,
@@ -9,7 +9,7 @@ const style = {
 
 const HomePage = () => (
   <div style={style}>
-    <h1>Home Page1234</h1>
+    <h1>Home Page1234569</h1>
     <h2>Welcome to the future!</h2>
     <p>
       <em>a page being provided by App 1</em>

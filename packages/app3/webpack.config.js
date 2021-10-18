@@ -1,68 +1,66 @@
 const { merge } = require('webpack-merge')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
-const LiveReloadPlugin = require('webpack-livereload-plugin')
 
 const developmentWebpackConfig = require('../../webpack/webpack.development')
 const productionWebpackConfig = require('../../webpack/webpack.production')
 const shared = require('../../webpack/sharedDependencies')
 
 const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = isDev
   ? merge(developmentWebpackConfig(), {
-      entry: './src/index',
+      entry: {
+        app3: './src/index'
+      },
 
       devtool: 'source-map',
 
       output: {
-        publicPath: 'http://localhost:3001/'
+        publicPath: 'http://localhost:3003/'
       },
 
       devServer: {
-        hot: false,
-        port: 3001
+        hot: true,
+        liveReload: false,
+        port: 3003
       },
 
       plugins: [
         new ModuleFederationPlugin({
-          name: 'app1',
+          name: 'app3',
           filename: 'remoteEntry.js',
           remotes: {
-            // 'lib-app': 'lib_app@http://localhost:3000/remoteEntry.js',
-            app2: 'app2@http://localhost:3002/remoteEntry.js'
-          },
-          exposes: {
-            './Navigation': './src/components/Navigation',
-            './routes': './src/routes'
-          },
-          shared
+            // 'lib-app': 'lib_app@http://localhost:3000/remoteEntry.js'
+          }
         }),
 
         new ExternalTemplateRemotesPlugin(),
 
-        new LiveReloadPlugin({
-          port: 35729
+        new ReactRefreshWebpackPlugin({
+          overlay: false,
+          exclude: [/node_modules/, /bootstrap\.js$/]
         })
       ]
     })
   : merge(productionWebpackConfig, {
       output: {
-        publicPath: '/app1/'
+        publicPath: '/app3/'
       },
 
       plugins: [
         new ModuleFederationPlugin({
-          name: 'app1',
+          name: 'app2',
           filename: 'remoteEntry.js',
           remotes: {
             // 'lib-app': 'lib_app@http://localhost:3000/lib-app/remoteEntry.js',
-            app2: 'app2@http://localhost:3002/app2/remoteEntry.js'
+            app1: 'app1@http://localhost:3001/app1/remoteEntry.js'
           },
           exposes: {
-            './Navigation': './src/components/Navigation',
-            './routes': './src/routes'
-          },
-          shared
+            './routes': './src/routes',
+            './Welcome': './src/components/Welcome'
+          }
         })
       ]
     })

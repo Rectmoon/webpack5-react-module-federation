@@ -1,6 +1,6 @@
-import React from 'lib-app/react'
-import { NameContextProvider } from 'lib-app/contexts'
-import Welcome from '../components/Welcome'
+import React from 'react'
+// import { NameContextProvider } from 'lib-app/contexts'
+// import Welcome from '../components/Welcome'
 
 const style = {
   height: 400,
@@ -10,15 +10,13 @@ const style = {
 }
 
 const AboutPage = () => {
-  const [name, setName] = React.useState('Jack777')
-
   return (
     <div style={style}>
-      <h1>About Page</h1>
+      <h1>About 123456789</h1>
 
-      <NameContextProvider.Provider value='Rectmoon' value={{ name, setName }}>
+      {/* <NameContextProvider.Provider value='Rectmoon' value={{ name, setName }}>
         <Welcome />
-      </NameContextProvider.Provider>
+      </NameContextProvider.Provider> */}
 
       <p>
         <em>a page being provided by App 2</em>

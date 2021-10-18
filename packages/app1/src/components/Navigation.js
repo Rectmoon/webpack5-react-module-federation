@@ -1,5 +1,5 @@
-import React from 'lib-app/react'
-import { Link } from 'lib-app/react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const style = { border: '1px solid #000', padding: 12 }
 
