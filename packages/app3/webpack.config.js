@@ -10,7 +10,7 @@ const shared = require('../../webpack/sharedDependencies')
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = isDev
-  ? merge(developmentWebpackConfig(), {
+  ? merge(developmentWebpackConfig, {
       entry: {
         app3: './src/index'
       },
@@ -33,7 +33,8 @@ module.exports = isDev
           filename: 'remoteEntry.js',
           remotes: {
             // 'lib-app': 'lib_app@http://localhost:3000/remoteEntry.js'
-          }
+          },
+          shared
         }),
 
         new ExternalTemplateRemotesPlugin(),
@@ -51,16 +52,14 @@ module.exports = isDev
 
       plugins: [
         new ModuleFederationPlugin({
-          name: 'app2',
+          name: 'app3',
           filename: 'remoteEntry.js',
           remotes: {
             // 'lib-app': 'lib_app@http://localhost:3000/lib-app/remoteEntry.js',
-            app1: 'app1@http://localhost:3001/app1/remoteEntry.js'
           },
-          exposes: {
-            './routes': './src/routes',
-            './Welcome': './src/components/Welcome'
-          }
-        })
+          shared
+        }),
+
+        new ExternalTemplateRemotesPlugin()
       ]
     })

@@ -12,7 +12,7 @@ const style = {
 const AboutPage = () => {
   return (
     <div style={style}>
-      <h1>About 123456789</h1>
+      <h1>About 666</h1>
 
       {/* <NameContextProvider.Provider value='Rectmoon' value={{ name, setName }}>
         <Welcome />

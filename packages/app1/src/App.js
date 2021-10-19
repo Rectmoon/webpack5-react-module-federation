@@ -16,6 +16,7 @@ const App = () => {
     <Router>
       <div>
         <h1>Hello Rectmoon</h1>
+        <p>with the highest bidder</p>
 
         <Navigation />
 
